@@ -5,7 +5,7 @@ const morgan   = require('morgan');
 const path     = require('path');
 
 const port = process.env.PORT        || 4000;
-const db   = process.env.MONGODB_URI || 'mongodb://localhost/notas';
+const db   = process.env.MONGODB_URI || 'mongodb+srv://HelloDatabase:HelloDatabase@cluster0.oganc.mongodb.net/HelloCrud?retryWrites=true&w=majority';
 
 const app = express();
 
@@ -17,7 +17,7 @@ mongoose
     console.log(`DB connected @ ${db}`);
   })
   .catch(err => console.error(`Connection error ${err}`));
-  
+
 // serve React frontend
 app.use(express.static('public'));
 app.get('/', (req, res) => {
